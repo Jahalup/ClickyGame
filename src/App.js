@@ -1,3 +1,5 @@
+// Imports
+
 import React, { Component } from 'react';
 import BirdCard from "./components/BirdCard/BirdCard";
 import birds from "./birds.json";
@@ -7,7 +9,7 @@ import NavBar from './components/Navbar/nav';
 import Wrapper from './components/wrapper/wrapper';
 import CardCont from './components/cardcont/cardcont';
 
-
+// Function for shuffling the array
 function shuffled(array) {
   for(let i = array.length - 1; i>0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -16,6 +18,7 @@ function shuffled(array) {
   return array;
 };
 
+// Defining states
 class App extends Component {
   state = {
     birds,
@@ -27,6 +30,7 @@ class App extends Component {
 
   }
 
+// Function for when an image is clicked
 clickevent = id => {
   console.log(id)
  if(this.state.clicked.indexOf(id) === -1) {
@@ -43,6 +47,8 @@ clickevent = id => {
   
 };
 
+
+// Function for handling the current score, top score and messages
 scoreup = () => {
  let scoreup1 = this.state.score + 1;
  let praise = ["good job", "Nice Going", "great!", "Bird-tastic!", "good for you!", "keep it up!"];
@@ -72,17 +78,12 @@ else if (scoreup1 >= 12) {
            }
 else if (scoreup1>=this.state.topscore ) { this.setState({topscore:scoreup1});}
                                     
-// else if (scoreup >= 12) {
-//   this.setState({message:"You Win!!!"
-// // topscore: 12,
-// // score: 0
-// })
-// alert("You Win!!!");};
-
-
-
 this.newshuffle();
 };
+
+
+
+// Function for resetting the game
 
 reset = () => {
   this.setState({clicked: [],
@@ -94,13 +95,8 @@ this.newshuffle();
 
 };
 
-// newshuffle1 = () => {
-//   if (this.state.clicked===[]) {
-//     this.newshuffle();
-//   }
-// }
 
-
+// Function for assigning the newly shuffled array to the state
 
 newshuffle = () => {
   let newlyshuffled = shuffled(birds);
@@ -108,7 +104,7 @@ newshuffle = () => {
 };
 
 
-
+// Rendering the page
   render() {
     return (
       

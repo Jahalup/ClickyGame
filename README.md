@@ -20,7 +20,7 @@ This application uses React to render a game where the user is invited to click 
 
 ### Link to Application
 
-[Heroku Link](https://)
+[Heroku Link](https://birdclicky.herokuapp.com/)
 
 ### GIFs
 

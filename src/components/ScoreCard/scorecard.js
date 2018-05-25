@@ -1,24 +1,22 @@
 import React from "react";
 import "./scorecard.css";
 
+
+// The scorecard row for displaying current score, top score and messages
+
 const ScoreCard = props => (
 
     <div className="row">
-    <div className="col s4 score z-depth-5">
-    <p>Score: <span className="scorenum">{props.score}</span></p>
+        <div className="col s4 score z-depth-5">
+            <p>Score: <span className="scorenum">{props.score}</span></p>
+        </div>
+        <div className="col s4 score1">
+            <p id="scoremessage" className="animated tada">{props.message}</p>
+        </div>
+        <div className="col s4 score z-depth-5">
+            <p>High Score:<span className="scorenum"> {props.topscore}</span></p>
+        </div>
     </div>
-    <div className="col s4 score1">
-    <p id="scoremessage" className="animated tada">{props.message}</p>
-    </div>
-    <div className="col s4 score z-depth-5">
-    <p>High Score:<span className="scorenum"> {props.topscore}</span></p>
-    </div>
-    </div>
-
-   
-      
-   
-   
 )
 
 export default ScoreCard;

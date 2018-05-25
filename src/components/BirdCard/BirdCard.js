@@ -1,6 +1,7 @@
 import React from "react";
 import "./BirdCard.css";
 
+// Small cards for holding each image
 const BirdCard = props => (
   <div className="card indiv hoverable z-depth-5"
   value={props.id}

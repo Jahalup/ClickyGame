@@ -6,10 +6,10 @@ This project was created by Jaime Halupka as a requirement for homework during U
 ### Screenshots
 
 Main Screen
-![In Action](clickygame/public/screenshots/screenshot1.png "In Action")
+![In Action](public/screenshots/screenshot1.png "In Action")
 
 Bird Photos
-![In Action](clickygame/public/screenshots/screenshot2.png "In Action")
+![In Action](public/screenshots/screenshot2.png "In Action")
 
 
   

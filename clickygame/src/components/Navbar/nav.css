@@ -4,3 +4,7 @@
     font-style: bold;
     margin: 0px;
 }
+
+#line {
+    border: gray solid 1px;
+}

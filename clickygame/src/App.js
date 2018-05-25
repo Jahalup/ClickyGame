@@ -4,6 +4,9 @@ import birds from "./birds.json";
 import './App.css';
 import ScoreCard from './components/ScoreCard/scorecard';
 import NavBar from './components/Navbar/nav';
+import Wrapper from './components/wrapper/wrapper';
+import CardCont from './components/cardcont/cardcont';
+
 
 function shuffled(array) {
   for(let i = array.length - 1; i>0; i--) {
@@ -19,7 +22,8 @@ class App extends Component {
     score:0,
     message:"Click a bird to begin!",
     topscore:"",
-    clicked: []
+    clicked: [],
+    class:""
 
   }
 clickevent = id => {
@@ -30,6 +34,7 @@ clickevent = id => {
    this.newshuffle();
  } else {
    alert("game over");
+   this.setState({class:"animated tada"});
    this.reset();
  
  }
@@ -52,7 +57,8 @@ this.newshuffle();
 reset = () => {
   this.setState({score:0,
                 message:"Click a bird to begin!",
-                clicked: []}
+                clicked: [],
+             }
 );
 this.newshuffle();
 
@@ -69,18 +75,21 @@ newshuffle = () => {
 
   render() {
     return (
+      
       <div className="App">
+     <Wrapper>
+       <header>
       <NavBar />
-        
-        {/* <header className="App-header">
-         
-          <h1 className="App-title">Bird Memory Game</h1> */}
           <ScoreCard
           score={this.state.score}
           topscore={this.state.topscore}
           message={this.state.message}
+
           />
-        {/* </header> */}
+          </header>
+          <main>
+       <CardCont
+       class={this.state.class}>
         {this.state.birds.map(bird => (
         <BirdCard
         key={bird.id}
@@ -93,8 +102,14 @@ newshuffle = () => {
 
         />
         ))}
+        </CardCont>
+        </main>
+       
+        </Wrapper>
         
       </div>
+     
+     
     );
   }
 }

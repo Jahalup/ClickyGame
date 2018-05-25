@@ -7,13 +7,14 @@ img {
 .card {
     width: 25%;
     float: left;
+    
 }
 
 .individualcard {
     padding: 10px;
     border: darkgray solid 2px;
     margin: 5px;
-    background-color:rgba(188, 229, 219, 0.308);
+    background-color:rgba(188, 229, 219, 0.514);
     border-radius: 4px;
     
 }

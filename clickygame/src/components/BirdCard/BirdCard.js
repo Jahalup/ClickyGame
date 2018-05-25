@@ -2,7 +2,7 @@ import React from "react";
 import "./BirdCard.css";
 
 const BirdCard = props => (
-  <div className="card indiv hoverable"
+  <div className="card indiv hoverable z-depth-5"
   value={props.id}
   onClick={() => props.clickevent(props.id)}
   >

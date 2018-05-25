@@ -2,6 +2,7 @@
     font-family: 'Kavivanar', cursive;
     font-size: 30px;
     font-style: bold;
+    border-radius: 8px;
 }
 
 .score1 {
@@ -12,5 +13,11 @@
 }
 #scoremessage {
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
+.scorenum {
+    font-size: 40px;
+    font-style: bolder;
+    
+}

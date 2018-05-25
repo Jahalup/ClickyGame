@@ -50,7 +50,18 @@ scoreup = () => {
                message:praise[Math.floor(Math.random() * 5)]}
               );
 
-              if (scoreup1 >= 12) {
+if(scoreup1===1) {
+  this.setState({message: "Now, don't click the same bird twice!",
+                topscore:scoreup1});
+}
+
+else if(scoreup1===11) {
+  this.setState({message: "Only one more to go!",
+                topscore:scoreup1});
+}
+
+
+else if (scoreup1 >= 12) {
                 this.setState({
                 topscore: scoreup1,
                 clicked:[]

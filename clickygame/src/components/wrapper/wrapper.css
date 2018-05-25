@@ -1,5 +1,6 @@
 .wrapper {
     margin: 5%;
-    background-color: rgba(145, 206, 145, 0.582)
+    background-color: rgba(145, 206, 145, 0.582);
+    border-radius: 10px;
    
 }

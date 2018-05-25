@@ -1,0 +1,16 @@
+.score {
+    font-family: 'Kavivanar', cursive;
+    font-size: 30px;
+    font-style: bold;
+}
+
+.score1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 40px;
+    font-style: bold;
+    
+}
+#scoremessage {
+    margin-bottom: 0px;
+}
+

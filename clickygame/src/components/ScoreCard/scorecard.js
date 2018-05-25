@@ -8,7 +8,7 @@ const ScoreCard = props => (
     <p>Score: {props.score}</p>
     </div>
     <div className="col s4 score1">
-    <p id="scoremessage">{props.message}</p>
+    <p id="scoremessage" className="animated tada">{props.message}</p>
     </div>
     <div className="col s4 score">
     <p>High Score: {props.topscore}</p>

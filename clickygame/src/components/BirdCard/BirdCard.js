@@ -7,7 +7,7 @@ const BirdCard = props => (
   onClick={() => props.clickevent(props.id)}
   >
     <div className="img-container individualcard">
-        <img className="images" alt={props.image.replace("jpg", "")} src={require("../../images/"+props.image)} />
+        <img className="images animated jello" alt={props.image.replace("jpg", "")} src={require("../../images/"+props.image)} />
     </div>
 
   </div>

@@ -19,57 +19,82 @@ function shuffled(array) {
 class App extends Component {
   state = {
     birds,
-    score:0,
+    score: 0,
     message:"Click a bird to begin!",
-    topscore:"",
+    topscore: 0,
     clicked: [],
     class:""
 
   }
+
 clickevent = id => {
   console.log(id)
  if(this.state.clicked.indexOf(id) === -1) {
-   this.scoreup();
    this.setState({clicked: this.state.clicked.concat(id) });
-   this.newshuffle();
+   this.scoreup();
+   console.log(this.state.clicked);
+  
  } else {
+  this.setState({message: "Game Over"});
    alert("game over");
-   this.setState({class:"animated tada"});
    this.reset();
  
  }
-  // (this.state.clicked.indexOf(id) === -1) ? (this.setState({clicked:this.state.clicked.push(id)}), this.scoreup()) : this.reset();
+  
 };
 
 scoreup = () => {
- let scoreup = this.state.score + 1;
- let praise = ["good job", "Nice Going", "great!", "Bird-tastic!", "good for you!", "keep it up!"]
- this.setState({score:scoreup,
+ let scoreup1 = this.state.score + 1;
+ let praise = ["good job", "Nice Going", "great!", "Bird-tastic!", "good for you!", "keep it up!"];
+ this.setState({score:scoreup1,
                message:praise[Math.floor(Math.random() * 5)]}
               );
 
-if (scoreup>this.state.topscore) { this.setState({topscore:scoreup})}
+              if (scoreup1 >= 12) {
+                this.setState({
+                topscore: scoreup1,
+                clicked:[]
+              });
+              console.log("this is the array: " + this.state.clicked)
+              this.reset();
+              alert("You Win!!!");
+           }
+else if (scoreup1>=this.state.topscore ) { this.setState({topscore:scoreup1});}
                                     
-else if (scoreup===12) {this.setState({message:"You Win!!!"})};
+// else if (scoreup >= 12) {
+//   this.setState({message:"You Win!!!"
+// // topscore: 12,
+// // score: 0
+// })
+// alert("You Win!!!");};
+
+
+
 this.newshuffle();
-}
+};
 
 reset = () => {
-  this.setState({score:0,
-                message:"Click a bird to begin!",
-                clicked: [],
-             }
-);
+  this.setState({clicked: [],
+                  score:0,
+                message:"Click a bird to begin!"
+               
+             });
 this.newshuffle();
 
-}
+};
+
+// newshuffle1 = () => {
+//   if (this.state.clicked===[]) {
+//     this.newshuffle();
+//   }
+// }
 
 
 
 newshuffle = () => {
   let newlyshuffled = shuffled(birds);
   this.setState({birds: newlyshuffled});
-}
+};
 
 
 
